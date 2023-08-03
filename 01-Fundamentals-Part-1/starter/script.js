@@ -51,17 +51,17 @@ console.log(day);
 //operator precedence
 //follow mdn operator precedence for bettern understanding.
 //Exercise
-let massMark = 78;
-let heightMark = 1.69;
-let massJohn = 92;
-let heightJohn = 1.95;
+// let massMark = 78;
+// let heightMark = 1.69;
+// let massJohn = 92;
+// let heightJohn = 1.95;
 
-let BMIMark = massMark / (heightMark * heightMark);
-let BMIJohn = massJohn / (heightJohn * heightJohn);
+// let BMIMark = massMark / (heightMark * heightMark);
+// let BMIJohn = massJohn / (heightJohn * heightJohn);
 
-console.log(BMIMark); //27.309968138370508
-console.log(BMIJohn); //24.194608809993426
-console.log(BMIMark > BMIJohn); //true
+// console.log(BMIMark); //27.309968138370508
+// console.log(BMIJohn); //24.194608809993426
+// console.log(BMIMark > BMIJohn); //true
 
 //string and template literals
 const jonasName = "Jonas";
