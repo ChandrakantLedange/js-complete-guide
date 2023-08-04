@@ -106,3 +106,10 @@ if (BMIMark > BMIJohn) {
 } else {
   console.log(`John's BMI is higher than mark's!`);
 }
+
+const bill = 270;
+const tip = bill >= 300 && bill <= 50 ? (bill * 15) / 100 : (bill * 20) / 100;
+console.log(
+  `your original bill ${bill} and tip was ${tip} so total Bill is ${bill + tip}`
+);
+//your original bill 270 and tip was 54 so total Bill is 324
