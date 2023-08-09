@@ -29,8 +29,8 @@ console.log(freshJuice); //juice with 3 apples adn 1 oranges
 //function declaration VS function expression
 //Function Declaration
 // const age = calAge(1994);//46
-function calAge(birthAge) {
-  return 2040 - birthAge;
+function calAge(birthYear) {
+  return 2040 - birthYear;
 }
 const age = calAge(1994);
 console.log("age:", age); //46
@@ -40,11 +40,18 @@ console.log("age:", age); //46
 //function Expression
 // console.log(currAge(1994)); //will get error
 
-const currAge = function (birthAge) {
-  return 2040 - birthAge;
+const currAge = function (birthYear) {
+  return 2040 - birthYear;
 };
 
 console.log(currAge(1994)); //46
 
 //Note : function expression can not call before declare or defined
 //will get error
+
+//Arrow function
+const myAge = (calAge = (birthYear) => {
+  return 2037 - birthYear;
+});
+
+console.log(myAge(1992)); //45
