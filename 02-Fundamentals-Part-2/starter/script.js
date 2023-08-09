@@ -71,3 +71,29 @@ const prepareJuice = (apples, oranges) => {
 
 console.log(prepareJuice(2, 4));
 //juice with 8 of apple and 16 of orange
+
+//====  Challenge #1 ====
+const calcAverage = (firstScore, secScore, thirdScore) => {
+  return (firstScore + secScore + thirdScore) / 3;
+};
+
+// const scoreDolphins = calcAverage(44, 23, 71);
+const scoreDolphins = calcAverage(85, 54, 41);
+// const scoreKoalas = calcAverage(65, 54, 49);
+const scoreKoalas = calcAverage(23, 34, 27);
+console.log("averages:82", scoreDolphins, scoreKoalas);
+
+function checkWinner(avgDolphins, avgKoalas) {
+  console.log("first if", avgDolphins, 2 * avgKoalas);
+  console.log("else if", avgKoalas, 2 * avgDolphins);
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win ${avgDolphins} vs ${avgKoalas}`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win ${avgKoalas} vs ${avgDolphins}`);
+  } else {
+    console.log(`No team wins...`);
+  }
+}
+
+checkWinner(scoreDolphins, scoreKoalas);
+//Dolphins win 60 vs 28
