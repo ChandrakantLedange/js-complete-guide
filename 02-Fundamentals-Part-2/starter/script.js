@@ -163,3 +163,88 @@ console.log(person["first" + nameKey]); //jonas
 console.log(
   `${person.firstName} has ${person.friends.length} friends and his best friend is ${person.friends[0]}`
 );
+
+//Object methods
+const personData = {
+  firstName: "Ganesh",
+  lastName: "Ledange",
+  birthYear: 1991,
+  job: "Accountant",
+  friends: ["vishnu", "Govind", "Sai"],
+  hasDriversLicense: true,
+
+  // plain method with parameter
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // },
+
+  //using this keyword
+  // calcAge: function () {
+  //   console.log(this);
+  //   return 2037 - this.birthYear;
+  // },
+
+  //add new keyword using method
+  calcAge: function () {
+    this.age = 2035 - this.birthYear;
+    console.log(this);
+    return this.age;
+  },
+
+  //method to getSummary
+  getSummary: function () {
+    return `${this.firstName} is ${this.age} yers old ${this.job} and he has ${
+      this.hasDriversLicense ? "a" : "no"
+    } driver's license`;
+  },
+};
+
+// console.log(personData.calcAge(1991));//46
+
+// console.log(personData.calcAge()); //46
+
+console.log(personData.calcAge()); //44
+console.log(personData.age); //44
+
+//Challenge
+//Ganesh is 44 years old and has a/no drivers license
+console.log(
+  `${personData.firstName} is ${personData.age} yers old and he has ${personData.hasDriversLicense} drivers license`
+); //Ganesh is 44 yers old and he has true drivers license
+
+console.log(personData.getSummary());
+//Ganesh is 44 yers old Accountant and he has a driver's license
+
+//challenge 3
+
+/* Write your code below. Good luck! 🙂 */
+
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    return this.mass / (this.height * this.height);
+  },
+};
+
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    return this.mass / (this.height * this.height);
+  },
+};
+const johnBMI = john.calcBMI();
+const markBMI = mark.calcBMI();
+
+if (johnBMI > markBMI) {
+  console.log(
+    `${john.fullName}'s BMI ${johnBMI} is higher than ${mark.fullName}'s ${markBMI}`
+  );
+} else {
+  console.log(
+    `${john.fullName}'s BMI ${johnBMI} is less than ${mark.fullName}'s ${markBMI}`
+  );
+}
