@@ -99,7 +99,6 @@ checkWinner(scoreDolphins, scoreKoalas);
 //Dolphins win 60 vs 28
 
 //Array exercise
-/* Write your code below. Good luck! 🙂 */
 let tip;
 const calcTip = (bill) => {
   if (bill >= 50 && bill <= 300) {
@@ -120,3 +119,47 @@ console.log(tips);
 
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(totals);
+
+//Object
+// store data in key and value format and it is also known as unstructure data
+
+const person = {
+  firstName: "Jonas",
+  lastName: "Newton",
+  age: 2037 - 1991,
+  job: "Developer",
+  friends: ["jeena", "Bob", "steven"],
+};
+
+//To access values
+//Dot notation  .
+//Bracket notation []
+console.log(person.firstName); // jonas
+console.log(person["firstName"]); //jonas
+
+//use bracket whenever want to put expression
+const nameKey = "Name";
+console.log(person["first" + nameKey]); //jonas
+// console.log(person."first" + nameKey);//error //unexpected string
+
+// const intrestedIn = prompt(
+//   "what do you want to know about person? choose firstName, lastName,age, job and friends"
+// );
+
+// console.log(person.intrestedIn); //undefined
+// console.log(person[intrestedIn]); //job - developer
+
+// if (person[intrestedIn]) {
+//   console.log(person[intrestedIn]);
+// } else {
+//   console.log(
+//     "you entered wrong key.. choose firstName, lastName,age, job and friends"
+//   );
+// }
+
+//challenge
+//from above person object a firstName has 3 friends and jeena is his best friend.
+// above should be dynamic
+console.log(
+  `${person.firstName} has ${person.friends.length} friends and his best friend is ${person.friends[0]}`
+);
