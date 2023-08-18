@@ -99,26 +99,26 @@ checkWinner(scoreDolphins, scoreKoalas);
 //Dolphins win 60 vs 28
 
 //Array exercise
-let tip;
-const calcTip = (bill) => {
-  if (bill >= 50 && bill <= 300) {
-    tip = (bill * 15) / 100;
-  } else {
-    tip = (bill * 20) / 100;
-  }
-  return tip;
-};
+// let tip;
+// const calcTip = (bill) => {
+//   if (bill >= 50 && bill <= 300) {
+//     tip = (bill * 15) / 100;
+//   } else {
+//     tip = (bill * 20) / 100;
+//   }
+//   return tip;
+// };
 
-console.log(calcTip(100));
+// console.log(calcTip(100));
 
-const bills = [125, 555, 44];
+// const bills = [125, 555, 44];
 
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills.length - 1)];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills.length - 1)];
 
-console.log(tips);
+// console.log(tips);
 
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(totals);
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// console.log(totals);
 
 //Object
 // store data in key and value format and it is also known as unstructure data
@@ -247,4 +247,97 @@ if (johnBMI > markBMI) {
   console.log(
     `${john.fullName}'s BMI ${johnBMI} is less than ${mark.fullName}'s ${markBMI}`
   );
+} //John Smith's BMI 24.194608809993426 is less than Mark Miller's 27.309968138370508
+
+//for loop
+//for loop keeps running while condition is true
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
 }
+
+//loop on array
+
+const personArray = [
+  "Jonas",
+  "Newton",
+  2037 - 1991,
+  "Developer",
+  ["jeena", "Bob", "steven"],
+];
+
+for (let i = 0; i < personArray.length; i++) {
+  console.log(personArray[i]);
+}
+
+//typof
+for (let i = 0; i < personArray.length; i++) {
+  console.log(typeof personArray[i]);
+}
+let types = [];
+for (let i = 0; i < personArray.length; i++) {
+  // types[i] = typeof personArray[i];
+  types.push(typeof personArray[i]); //(5) ['string', 'string', 'number', 'string', 'object']
+}
+console.log(types);
+
+//calculate the ages from array
+const years = [1991, 2000, 2001, 1994];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  // ages[i] = 2023 - years[i];
+  ages.push(2023 - years[i]);
+}
+
+console.log(ages); //(4) [32, 23, 22, 29]
+
+//continue and break
+// ONLY STRINGS
+for (let i = 0; i < personArray.length; i++) {
+  if (typeof personArray[i] !== "string") {
+    continue;
+  }
+  console.log(typeof personArray[i], personArray[i]);
+}
+
+// break with number
+for (let i = 0; i < personArray.length; i++) {
+  if (typeof personArray[i] === "number") {
+    break;
+  }
+  console.log(typeof personArray[i], personArray[i]);
+}
+
+//Challenge
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+/* Write your code below. Good luck! 🙂 */
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+}
+console.log(bills);
+console.log(tips);
+console.log(totals);
+
+function calculateAverage(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    // sum = sum + arr[i];
+    sum += arr[i];
+  }
+  return sum / arr.length;
+}
+console.log(calculateAverage([2, 3, 7])); //4
+console.log(calculateAverage(totals)); //275.19
+console.log(calculateAverage(tips)); //42.89
